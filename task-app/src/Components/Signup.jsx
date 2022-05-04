@@ -28,7 +28,7 @@ function Signup(){
                 <input onChange={typeChange} name="email" value={username.email} placeholder="Email"/>
                 <input placeholder="Password"/>
                 <input placeholder="Conform Password"/>
-                <button>Submit</button>
+                <button>Sign Up</button>
             </form>
         </div>
     );
