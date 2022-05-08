@@ -22,7 +22,8 @@ html{
     transform: rotate(2deg);
     padding: 0.8rem 3rem;
     border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
+    background-color: whitesmoke;
     font-size: 2rem;
     font-family: 'sansita', sans-serif;
     color: #50a3a2;
@@ -76,7 +77,7 @@ input[type="text"]:focus {
 .box{
     max-width: 25%;
     margin: 50px auto;
-    background: white;
+    background: #eeeeee;
     border-radius: 5px;
     box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
