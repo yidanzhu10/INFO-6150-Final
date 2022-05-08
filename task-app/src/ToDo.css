@@ -1,0 +1,114 @@
+html{
+    background-color: #50a3a2b3;
+}
+/* .heading{
+    background-color: #50a3a2;
+    color: white;
+    width: fit-content;
+    padding: 0.001% 5%;
+    border-radius: 10px;
+    margin: 4% auto;
+    font-family: 'sansita', sans-serif;
+} */
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4% auto 1rem;
+    width: fit-content;
+}
+.heading h1 {
+    transform: rotate(2deg);
+    padding: 0.8rem 3rem;
+    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+    background-color: #eeeeee;
+    font-size: 2rem;
+    font-family: 'sansita', sans-serif;
+    color: #50a3a2;
+}
+
+.form{
+    /* min-height: 70px; */
+    /* display: flex; */
+    /* align-items: center; */
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0 auto;
+    width: 25%;
+}
+
+input[type=text]{
+    width: 80%;
+    text-align: center;
+    height: 50px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 1.5em;
+    font-weight: 200;
+    vertical-align: middle;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 #50a3a2;
+}
+
+::placeholder {
+    color: #eeeeee;
+    opacity: 1;
+}
+
+.addButton{
+    vertical-align: middle;
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #50a3a2;
+    color: #ffffff;
+    font-size: 2.5em;
+    /* margin-top: 3%; */
+    margin-left: 3%;
+    border-width: 0;
+}
+
+.box{
+    max-width: 25%;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.item{
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+    border-bottom: 0;
+}
+
+input[type=checkbox]{
+    margin: 20px;
+}
+
+input:checked{
+    background-color: #50a3a2;
+}
+
+input:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: #50a3a2;
+}
+
+p{
+    margin: 0;
+    padding: 20px;
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #00204a;
+}
