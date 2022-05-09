@@ -4,6 +4,7 @@ import NoteArea from "./NoteArea";
 import Note from "./Note";
 import axios from "axios";
 
+
 import "../note.css";
 
 function NotePage(){

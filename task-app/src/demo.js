@@ -15,7 +15,12 @@ async function main() {
         await client.close();
     }
     
+    
 
+}
+
+async function createListing(client, newListing){
+    client.db("User").collection("information").insertone(newListing);
 }
 
 main().catch(console.error);

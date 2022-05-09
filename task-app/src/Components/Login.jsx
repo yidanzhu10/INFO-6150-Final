@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React, {useState} from 'react';
 import '../Signup.css';
 import swal from 'sweetalert';
@@ -13,7 +13,7 @@ function Login(){
 
     });
 
-    let history = useHistory();
+    let navigate = useNavigate();
 
     // function typeChange(event){
     //     const newValue = event.target.value;
@@ -55,7 +55,7 @@ function Login(){
                             icon: "success"
                         });
                         
-                        history.push("/notepage");
+                        navigate("/notepage");
                         return ;
                     }else{
                         swal({
