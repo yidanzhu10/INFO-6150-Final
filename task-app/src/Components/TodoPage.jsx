@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import ToDoItem from './ToDoItem';
 import TodoInput from './TodoInput';
 import '../ToDo.css';
+import BackButton from './BackButton';
+import Footer from './Footer';
+
 
 function TodoPage(){
     const [input, setInput] = useState(""); // eslint-disable-line
@@ -40,6 +43,10 @@ function TodoPage(){
                     />
                 ))}
             </div>
+            <div style={{marginTop:"20%"}}>
+                <BackButton />
+                <Footer />
+            </div>  
         </div>
     );
 }
