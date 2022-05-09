@@ -1,6 +1,8 @@
+import { useHistory } from 'react-router-dom';
 import React, {useState} from 'react';
 import '../Signup.css';
 import swal from 'sweetalert';
+
 import axios from 'axios';
 
 function Login(){
@@ -10,7 +12,9 @@ function Login(){
         password:''
 
     });
-    
+
+    let history = useHistory();
+
     // function typeChange(event){
     //     const newValue = event.target.value;
     //     setUserEmail(newValue);
@@ -24,6 +28,8 @@ function Login(){
             };
         });
     }
+
+    
 
     function handleClick(event) {
         event.preventDefault();
@@ -41,12 +47,16 @@ function Login(){
                     flag = false;
                     console.log(flag);
                     if(item.password == useremail.password){
+                        sessionStorage.setItem("email", useremail.email);
+                        console.log("login email is " + sessionStorage.getItem("email"));
                         swal({
                             title: "Success",
                             text: "Login Successful",
                             icon: "success"
                         });
-                        return;
+                        
+                        history.push("/notepage");
+                        return ;
                     }else{
                         swal({
                             title: "Error",

@@ -11,7 +11,7 @@ root.render(
   <React.StrictMode>
     {/* <Signup /> */}
     <Login />
-    {/* <NotePage /> */}
+    <NotePage />
   </React.StrictMode>
 );
 

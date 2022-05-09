@@ -12,6 +12,7 @@ var mongodb = 'mongodb+srv://Info6150Final:info6150final@cluster0.vwjsj.mongodb.
 mongoose.connect(mongodb);
 
 app.use("/users/", require("./routes/userRoute.js"));
+app.use("/notepage", require("../Components/NotePage.jsx"));
 
 app.listen(3001, function(){
     console.log(">>> express is running");

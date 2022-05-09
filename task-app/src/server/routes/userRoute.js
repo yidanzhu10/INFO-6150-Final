@@ -8,7 +8,7 @@ router.route("/create").post((req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const notelist = req.body.notelist;
-    console.log(">>> g: ", req.body);
+    console.log(">>> ccleae: ", req.body);
     const newUser = new user({
         firstname,
         lastname,
@@ -22,6 +22,8 @@ router.route("/create").post((req, res) => {
 });
 
 router.route("/update").post((req, res)  =>{
+
+    console.log(">>> u: ", req.body);
     user.update({email: req.body.email}, {
         $set: {
             notelist: req.body.notelist
