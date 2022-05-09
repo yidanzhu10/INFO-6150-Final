@@ -4,12 +4,17 @@ import NoteArea from "./NoteArea";
 import Note from "./Note";
 import axios from "axios";
 
-
+import swal from "sweetalert";
 import "../note.css";
 
 function NotePage(){
     const [notes, setNotes] = useState([]);
     const [currentEmail, setCurrentEmail] = useState("");
+
+    if(setCurrentEmail.getItem != null){
+        setCurrentEmail(sessionStorage.getItem("email"));
+    }
+    
 
     
     // if(sessionStorage.getItem("email") == null) {
@@ -73,9 +78,46 @@ function NotePage(){
             
             
         });
+
+        const newNotes={
+                   
+           
+            email:currentEmail,
+            notelist: notes
+        };
+        axios.post('http://localhost:3001/users/update', newNotes);
+
+
     }
-    
-    
+
+    function retrieveNote() {
+        
+        let users = fetch("http://localhost:3001/users/users")
+        .then(res => {
+            if (res.ok) {
+                return res.json()
+            }
+        }).then(users => {
+            let flag = true;
+            
+            console.log("Current user is " + currentEmail);
+            users.find((item) => {
+                console.log(item.email);
+                console.log(currentEmail);
+                if (item.email == currentEmail) {
+                    
+                    flag = false;
+                    console.log(flag);
+                    setNotes(item.notelist);
+                    return;
+                } 
+            });
+            console.log("final flag is " + flag);
+              
+            
+        });
+    }
+
 
     return (
         <div>
