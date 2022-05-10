@@ -1,25 +1,27 @@
 import React from "react";  
 import {Col, Button} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faClipboard, faTasks} from '@fortawesome/free-solid-svg-icons';
+
 
 function Directory(){
     return(
         <div>
             <Col className="directory">
                 <Button href="#">
-                    <FontAwesomeIcon icon="fa-solid fa-file-lines" /> 
+                    <FontAwesomeIcon icon={faHome} />
                     <p>Dashboard</p>
                 </Button>
             </Col>
             <Col className="directory">
             <Button>
-                    <FontAwesomeIcon icon="fa-solid fa-notes" />
+                    <FontAwesomeIcon icon={faClipboard} />
                     <p>Note</p>
                 </Button>
             </Col>
             <Col className="directory">
                 <Button>
-                    <FontAwesomeIcon icon="fa-solid fa-list-check" />
+                    <FontAwesomeIcon icon={faTasks} />
                     <p>To-Do</p>
                 </Button>
             </Col>
