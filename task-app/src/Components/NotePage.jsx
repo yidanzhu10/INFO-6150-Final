@@ -11,21 +11,26 @@ function NotePage(){
     const [notes, setNotes] = useState([]);
     const [currentEmail, setCurrentEmail] = useState("");
 
-    if(setCurrentEmail.getItem != null){
-        setCurrentEmail(sessionStorage.getItem("email"));
-    }
-    
-
     
     // if(sessionStorage.getItem("email") == null) {
     //     setCurrentEmail(sessionStorage.getItem("email"));
     // }
     useEffect( () => {
+        console.log(sessionStorage.getItem("email"));
         setCurrentEmail(sessionStorage.getItem("email"));
+        console.log(currentEmail + " currentEmail");
         retrieveNote();
+        console.log(currentEmail + " after retrieve");
         console.log("first loaded");
         console.log(notes);
     }, [])
+
+    useEffect(() => {
+
+        console.log(currentEmail + " currentEmail in node");
+        retrieveNote();
+
+    },[currentEmail])
     
 
     
@@ -52,10 +57,6 @@ function NotePage(){
 
     }
 
-
-
-
-
     function retrieveNote() {
         
         let users = fetch("http://localhost:3001/users/users")
@@ -64,41 +65,7 @@ function NotePage(){
                 return res.json()
             }
         }).then(users => {
-            let flag = true;
-            users.find((item) => {
-                
-               
-                if (item.email == currentEmail) {
-                    console.log("current user is " + currentEmail);
-                    setNotes(item.notelist);
-                    console.log(item.notelist);
-                    return;
-                } 
-            });
             
-            
-        });
-
-        const newNotes={
-                   
-           
-            email:currentEmail,
-            notelist: notes
-        };
-        axios.post('http://localhost:3001/users/update', newNotes);
-
-
-    }
-
-    function retrieveNote() {
-        
-        let users = fetch("http://localhost:3001/users/users")
-        .then(res => {
-            if (res.ok) {
-                return res.json()
-            }
-        }).then(users => {
-            let flag = true;
             
             console.log("Current user is " + currentEmail);
             users.find((item) => {
@@ -106,13 +73,12 @@ function NotePage(){
                 console.log(currentEmail);
                 if (item.email == currentEmail) {
                     
-                    flag = false;
-                    console.log(flag);
                     setNotes(item.notelist);
+                    console.log()
                     return;
                 } 
             });
-            console.log("final flag is " + flag);
+           
               
             
         });
