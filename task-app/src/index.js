@@ -29,7 +29,7 @@ root.render(
     {/* <Signup /> */}
     {/* <Login /> */}
     {/* <NotePage /> */}
-   </HashRouter>
+  </HashRouter>
 
   
 );
