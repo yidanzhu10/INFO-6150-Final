@@ -86,6 +86,7 @@ function NotePage(){
         });
     }
 
+    
 
     return (
         <div>
@@ -95,7 +96,7 @@ function NotePage(){
             {notes.map((item) => {
                 return <Note title={item.title} content={item.content} />;
             })}
-            <Note key={1} title="Note Title" content="Note content" />
+            {/* <Note key={1} title="Note Title" content="Note content" /> */}
             <br />
             <div style={{marginTop:"25%"}}>
                 <Footer />

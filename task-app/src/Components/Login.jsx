@@ -55,7 +55,7 @@ function Login(){
                             icon: "success"
                         });
                         
-                        navigate("/notepage");
+                        navigate("/dashboard");
                         return ;
                     }else{
                         swal({
