@@ -5,13 +5,22 @@ import Note from "./Note";
 import axios from "axios";
 
 import swal from "sweetalert";
-import "../note.css";
+import '../note.css';
 import Footer from "./Footer";
 import BackButton from "./BackButton";
 
 function NotePage(){
     const [notes, setNotes] = useState([]);
     const [currentEmail, setCurrentEmail] = useState("");
+
+
+
+    const deleteTask = (key) => {
+
+        // you need to remove element from array and do setNotes() without that element;
+
+
+    }
 
     
     // if(sessionStorage.getItem("email") == null) {
@@ -94,7 +103,7 @@ function NotePage(){
             <BackButton style={{marginTop:"1%"}}/>
             <NoteArea onAdd={addToNote} />
             {notes.map((item) => {
-                return <Note title={item.title} content={item.content} />;
+                return <Note title={item.title} content={item.content} id={item.id} deleteNote={deleteTask} />;
             })}
             {/* <Note key={1} title="Note Title" content="Note content" /> */}
             <br />
