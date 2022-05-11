@@ -1,13 +1,271 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100vh;
+  margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.notePage {
+  background: #eeeeee;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.noteHeader {
+  background-color: #50a3a2;
+  box-shadow: 0 0 10px #0000004d;
+  padding: 3% 5%;
+  margin-bottom: 2%;
+}
+
+header h1 {
+  color: white;
+  font-family: "sansita", sans-serif;
+  font-weight: 200;
+  font-size: 3em;
+}
+
+.note {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 1%;
+  width: 20%;
+  margin: 5%;
+  float: left;
+  font-family: "montserrat", sans-serif;
+}
+
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+::placeholder {
+  color: grey;
+}
+.note .deleteButton {
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #50a3a2;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+.noteInputForm {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px #8a89894d;
+}
+
+.noteInputForm .noteInput,
+.noteInputForm textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: "montserrat", sans-serif;
+  resize: none;
+  color: grey;
+}
+
+.noteInput::placeholder,
+.noteContentInput::placeholder {
+  color: grey;
+}
+
+.addButton {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #50a3a2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px #0000004d;
+  cursor: pointer;
+  outline: none;
+  font-size: 1em;
+}
+
+.noteContent {
+  padding-left: 0;
+}
+
+.deleteButton {
+  position: absolute;
+  right: 1%;
+  color: #50a3a2;
+  border: none;
+  width: auto;
+  cursor: pointer;
+  outline: none;
+}
+
+html {
+  background-color: #50a3a2;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4% auto 2rem;
+  width: fit-content;
+}
+.heading .date {
+  transform: rotate(2deg);
+  padding: 0.8rem 3rem;
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  background-color: whitesmoke;
+  font-size: 2rem;
+  font-family: "sansita", sans-serif;
+  color: #50a3a2;
+  margin-bottom: 5%;
+}
+
+.inputForm {
+  border-bottom: 1px solid #f1f1f1;
+  margin: 1% auto;
+  width: 25%;
+}
+
+.todoInput[type="text"] {
+  width: 80%;
+  text-align: center;
+  height: 50px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 1.5em;
+  font-weight: 200;
+  vertical-align: middle;
+  color: white;
+}
+
+.todoInput[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #50a3a2;
+}
+
+::placeholder {
+  color: #eeeeee;
+  opacity: 1;
+}
+
+.add {
+  vertical-align: middle;
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #50a3a2;
+  color: #ffffff;
+  font-size: 2.5em;
+  margin-left: 3%;
+  border-width: 0;
+}
+
+.box {
+  max-width: 25%;
+  margin: 50px auto;
+  background: #eeeeee;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+input:checked {
+  background-color: #50a3a2;
+}
+
+input:checked + p {
+  text-decoration: line-through;
+  text-decoration-color: #50a3a2;
+}
+
+p {
+  margin: 0;
+  padding: 20px;
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #00204a;
+}
+
+.signUpContainer {
+  margin: 5% auto;
+  padding: 2% 0;
+  text-align: center;
+}
+
+.signUpContainer h1 {
+  font-size: 3em;
+  font-weight: 200;
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  font-weight: 300;
+  background: #50a3a2;
+  width: 100%;
+  height: 100%;
+}
+
+.signupInput {
+  border: 1px solid #fcfcfc66;
+  background-color: #fcfcfc33;
+  width: 17.5%;
+  border-radius: 10px;
+  font-family: "Source San Pro", sans-serif;
+  padding: 0.8% 1.2%;
+  margin: 0 auto 10px;
+  display: block;
+  text-align: left;
+  font-size: 1.2em;
+  color: white;
+  font-weight: 300;
+}
+
+.signUpButton {
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 0.8% 1.5%;
+  color: #50a3a2;
+  border-radius: 10px;
+  width: 17.5%;
+  font-size: 1.2em;
+  margin-top: 1%;
 }
