@@ -22,7 +22,7 @@
 
 //     }
 
-    
+
 //     // if(sessionStorage.getItem("email") == null) {
 //     //     setCurrentEmail(sessionStorage.getItem("email"));
 //     // }
@@ -42,22 +42,22 @@
 //         retrieveNote();
 
 //     },[currentEmail])
-    
 
-    
+
+
 //     function addToNote(newNote){
-        
+
 //         let newlist = [...notes, newNote];
 //         // setNotes((preNotes) => {
 //         //     console.log("setnotes");
 //         //     console.log([...preNotes, newNote]);
 //         //     return ;
 //         // });
-        
+
 //         console.log("new note is " + newNote.title);
 //         console.log(notes);
 //         const newNotes={
-  
+
 //             email:currentEmail,
 //             notelist: newlist
 //         };
@@ -69,33 +69,33 @@
 //     }
 
 //     function retrieveNote() {
-        
+
 //         let users = fetch("http://localhost:3001/users/users")
 //         .then(res => {
 //             if (res.ok) {
 //                 return res.json()
 //             }
 //         }).then(users => {
-            
-            
+
+
 //             console.log("Current user is " + currentEmail);
 //             users.find((item) => {
 //                 console.log(item.email);
 //                 console.log(currentEmail);
 //                 if (item.email == currentEmail) {
-                    
+
 //                     setNotes(item.notelist);
 //                     console.log()
 //                     return;
 //                 } 
 //             });
-           
-              
-            
+
+
+
 //         });
 //     }
 
-    
+
 
 //     return (
 //         <div>
@@ -113,7 +113,7 @@
 //         </div>
 //     );
 
-    
+
 
 
 
@@ -140,6 +140,7 @@ import swal from "sweetalert";
 function NotePage() {
   const [notes, setNotes] = useState([]);
   const [currentEmail, setCurrentEmail] = useState("");
+  const [deleteTrigger, setDeleteTrigger] = useState("");
 
   function addToNote(newNote) {
     setNotes((preNotes) => {
@@ -147,7 +148,7 @@ function NotePage() {
     });
   }
 
-useEffect( () => {
+  useEffect(() => {
     console.log(sessionStorage.getItem("email"));
     setCurrentEmail(sessionStorage.getItem("email"));
     console.log(currentEmail + " currentEmail");
@@ -155,75 +156,110 @@ useEffect( () => {
     console.log(currentEmail + " after retrieve");
     console.log("first loaded");
     console.log(notes);
-}, [])
+  }, [])
 
-useEffect(() => {
+  useEffect(() => {
 
     console.log(currentEmail + " currentEmail in node");
     retrieveNote();
 
-},[currentEmail])
+  }, [currentEmail])
+
+  useEffect(() => {
+
+    console.log(currentEmail + " currentEmail in node");
+    retrieveNote();
+
+  }, [deleteTrigger])
 
 
+  function addToNote(newNote) {
 
-function addToNote(newNote){
-    
+
     let newlist = [...notes, newNote];
     // setNotes((preNotes) => {
     //     console.log("setnotes");
     //     console.log([...preNotes, newNote]);
     //     return ;
     // });
-    
+
     console.log("new note is " + newNote.title);
     console.log(notes);
-    const newNotes={
+    const newNotes = {
 
-        email:currentEmail,
-        notelist: newlist
+      email: currentEmail,
+      notelist: newlist
     };
-    axios.post('http://localhost:3001/users/update',newNotes);
+    axios.post('http://localhost:3001/users/update', newNotes);
     // retrieveNote();
     setNotes(newlist);
-    return ; 
+    return;
 
-}
+  }
 
-function retrieveNote() {
-    
+  function retrieveNote() {
+
     let users = fetch("http://localhost:3001/users/users")
-    .then(res => {
+      .then(res => {
         if (res.ok) {
-            return res.json()
+          return res.json()
         }
-    }).then(users => {
-        
-        
+      }).then(users => {
+
+
         console.log("Current user is " + currentEmail);
         users.find((item) => {
-            console.log(item.email);
-            console.log(currentEmail);
-            if (item.email == currentEmail) {
-                
-                setNotes(item.notelist);
-                console.log()
-                return;
-            } 
+          console.log(item.email);
+          console.log(currentEmail);
+          if (item.email == currentEmail) {
+
+            setNotes(item.notelist);
+            console.log()
+            return;
+          }
         });
-       
-          
-        
-    });
-}
+
+
+
+      });
+  }
+
+  function deleteNote(number) {
+    
+    let newlist = notes;
+    let removedlist = newlist.splice(number, 1);
+    // setNotes((preNotes) => {
+    //     console.log("setnotes");
+    //     console.log([...preNotes, newNote]);
+    //     return ;
+    // });
+
+    // console.log("new note is " + newNote.title);
+    console.log(notes);
+    const newNotes = {
+
+      email: currentEmail,
+      notelist: newlist
+    };
+    axios.post('http://localhost:3001/users/update', newNotes);
+    // retrieveNote();
+    setNotes(newlist);
+    setDeleteTrigger(deleteTrigger + "-");
+    // setCurrentEmail(currentEmail);
+
+  }
+
+
 
   return (
     <div className="notePage">
       <NoteHeader />
       <NoteArea onAdd={addToNote} />
-      {notes.map((item) => {
-        return <Note title={item.title} content={item.content} />;
+      {notes.map((item, index) => {
+        console.log("current index is " + index);
+        return <Note number={index} title={item.title} deleteNote={deleteNote} content={item.content} />;
       })}
-      <Note key={1} title="Note Title" content="Note content" />
+      {/* <Note key={1} title="Note Title" content="Note content" /> */}
       <br />
       <Footer1>
         <BackButton />

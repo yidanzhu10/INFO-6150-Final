@@ -198,7 +198,8 @@ function Signup() {
                         lastname:username.lName,
                         email:username.email,
                         password:username.password,
-                        notelist:[]
+                        notelist:[],
+                        todo: []
                     };
                     axios.post('http://localhost:3001/users/create',newUser);
                     swal({
