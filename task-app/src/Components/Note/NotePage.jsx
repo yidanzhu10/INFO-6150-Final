@@ -134,8 +134,7 @@ import "../../index.css";
 import BackButton from "../BackButton";
 import styled from "styled-components";
 import axios from "axios";
-
-import swal from "sweetalert";
+import swal from "sweetalert"; 
 
 function NotePage() {
   const [notes, setNotes] = useState([]);
