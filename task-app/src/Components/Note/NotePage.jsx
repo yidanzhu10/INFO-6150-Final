@@ -178,7 +178,6 @@ function addToNote(newNote){
     console.log("new note is " + newNote.title);
     console.log(notes);
     const newNotes={
-
         email:currentEmail,
         notelist: newlist
     };
@@ -186,33 +185,25 @@ function addToNote(newNote){
     // retrieveNote();
     setNotes(newlist);
     return ; 
-
 }
 
-function retrieveNote() {
-    
+function retrieveNote() {   
     let users = fetch("http://localhost:3001/users/users")
     .then(res => {
         if (res.ok) {
             return res.json()
         }
     }).then(users => {
-        
-        
         console.log("Current user is " + currentEmail);
         users.find((item) => {
             console.log(item.email);
             console.log(currentEmail);
             if (item.email == currentEmail) {
-                
                 setNotes(item.notelist);
                 console.log()
                 return;
             } 
         });
-       
-          
-        
     });
 }
 
@@ -220,29 +211,36 @@ function retrieveNote() {
     <div className="notePage">
       <NoteHeader />
       <NoteArea onAdd={addToNote} />
-      {notes.map((item) => {
-        return <Note title={item.title} content={item.content} />;
-      })}
-      <Note key={1} title="Note Title" content="Note content" />
-      <br />
-      <Footer1>
-        <BackButton />
-        <Copyright>© Copyright 2022 Husky Mavericks </Copyright>
-      </Footer1>
+        {notes.map((item) => {
+          return (<Note title={item.title} content={item.content} />);
+        })}
+        <Note key={1} title="Note Title" content="Note content" />
+
+      
+        <Footer1>
+          <BackButton />
+          <Copyright>© Copyright 2022 Husky Mavericks </Copyright>
+        </Footer1>
+      
+      
     </div>
   );
 }
 
 const Footer1 = styled.div`
-  margin-top: 25%;
+  ${'' /* margin-top: 25%; */}
+  margin-top: -35%;
+  height: 5%;
+  position: relative;
+  clear: both;
 `;
 
 const Copyright = styled.div`
   background-color: #eeeeee;
   font-family: "Montserrat", sans-serif;
   color: grey;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 5%;
+  padding-bottom: 100%;
   text-align: center;
 `;
 

@@ -23,7 +23,7 @@ function ToDoItem(props) {
   return (
     <Item className="item">
       <input type="checkbox" />
-      <p>{props.text}</p >
+      <p className="todoContent">{props.text}</p >
     </Item>
   );
 }

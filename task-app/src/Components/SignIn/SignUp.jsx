@@ -123,6 +123,7 @@ import React, { useState } from "react";
 import "../../index.css";
 import axios from 'axios';
 import swal from 'sweetalert';
+import styled from 'styled-components';
 
 function Signup() {
   const [username, setUsername] = useState({
@@ -223,7 +224,7 @@ function Signup() {
       <h1>
         Hello {username.fName} {username.lName}
       </h1>
-      <p>{username.email}</p >
+      <UserName>{username.email}</UserName>
       <form className="signupForm">
         <input
           className="signupInput"
@@ -253,5 +254,13 @@ function Signup() {
     </div>
   );
 }
+
+const UserName = styled.p`
+  font-family: 'Source Sans Pro';
+  color: white;
+  font-weight: 200;
+  padding-top: 2%;
+  padding-bottom: 2%;
+`;
 
 export default Signup;
