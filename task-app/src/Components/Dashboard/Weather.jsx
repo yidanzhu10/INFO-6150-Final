@@ -3,8 +3,11 @@ import {Col, Row, Card} from 'react-bootstrap';
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
 function Weather(){
-    const url="api.openweathermap.org/data/2.5/weather?q=Boston&appid=6ca60f44f0359b08c91c9c5edf228a23&units=imperial";
-    const[weather, setWeather] = useState("");
+    const key = process.env.OPEN_WEATHER_API_KEY;
+    const url="api.openweathermap.org/data/2.5/weather?q=Boston&appid=" + key + "&units=imperial";
+    const[weather, setWeather] = useState({});
+
+    // console.log(process.env.OPEN_WEATHER_API_KEY);
 
     // const getData = () => {
     //     fetch(url)
@@ -19,10 +22,10 @@ function Weather(){
     // };
     // useEffect(() => {
     //     getData();
-    // },[]);
+    // });
 
     const {data, isLoading, errorMessage} = useOpenWeather({
-        key: '6ca60f44f0359b08c91c9c5edf228a23',
+        key: key,
         lang:'en',
         lon: '-71.0598',
         lat: '42.3584',
@@ -32,13 +35,20 @@ function Weather(){
     
 
     return (
-        <ReactWeather 
+        <div>
+            <ReactWeather 
             isLoading={isLoading}
             errorMessage={errorMessage}
             data={data}
             lang='en'
-            locationLabel='Boston'
-        />
+            locationLabel='Boston'  
+            />
+            {/* <p>
+                {weather.main.temp}
+            </p> */}
+        </div>
+        
+                  
     );
 }
 

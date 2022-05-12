@@ -8,7 +8,7 @@ function Feed(){
             <Col fluid>
                 <Row>
                     <Col>
-                        {/* <Weather /> */}
+                        <Weather />
                     </Col>
                 </Row>
             </Col>
