@@ -5,13 +5,14 @@ import Directory from "./Directory";
 import Feed from "./Feed";
 // import Copyright from '../Footer';
 import styled from "styled-components";
+import Weather from "./Weather";
 
 function Dashboard(){
     return(
         <div>
             <Header />
             <Directory />
-            <Feed />
+            <Weather />
             <Cr>© Copyright 2022 Husky Mavericks</Cr>;
         </div>
     );

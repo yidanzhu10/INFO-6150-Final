@@ -281,3 +281,25 @@ input:checked + p {
   padding-top: 5%;
   padding-bottom: 5%;
 }
+
+.weather{
+  border: 1px solid grey;
+}
+
+.weather .search{
+  /* text-align: center; */
+  justify-content: left;
+
+}
+
+.locationInput{
+  color: rgb(39, 6, 6);
+}
+
+.locationInput::placeholder{
+  color:grey;
+}
+
+.cityName{
+
+}
