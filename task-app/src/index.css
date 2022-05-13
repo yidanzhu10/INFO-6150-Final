@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'montserrat', sans-serif;
 }
 html {
   height: 100vh;
   margin: 0;
+  background-color: #50a3a2;
 }
 
 .notePage {
@@ -35,7 +37,7 @@ header h1 {
   box-shadow: 0 2px 5px #ccc;
   padding: 1%;
   width: 20%;
-  margin: 5%;
+  margin: 2% 5% 0;
   float: left;
   font-family: "montserrat", sans-serif;
 }
@@ -45,7 +47,7 @@ header h1 {
   margin-bottom: 6px;
 }
 
-.note p {
+.note .noteContent {
   font-size: 1.1em;
   margin-bottom: 10px;
   white-space: pre-wrap;
@@ -121,7 +123,7 @@ header h1 {
   outline: none;
 }
 
-html {
+.todoContainer{
   background-color: #50a3a2;
 }
 
@@ -217,7 +219,7 @@ input:checked + p {
   text-decoration-color: #50a3a2;
 }
 
-p {
+.todoContent {
   margin: 0;
   padding: 20px;
   font-size: 1.3em;
@@ -225,10 +227,15 @@ p {
   color: #00204a;
 }
 
+/* .hello{
+  background-color: #50a3a2b3;
+} */
+
 .signUpContainer {
   margin: 5% auto;
   padding: 2% 0;
   text-align: center;
+  background-color: #50a3a2;
 }
 
 .signUpContainer h1 {
@@ -241,6 +248,12 @@ p {
   width: 100%;
   height: 100%;
 }
+
+ /* .signUpContainer .userName{
+  font-family: 'Source Sans Pro';
+  color: white;
+  font-weight: 200;
+} */
 
 .signupInput {
   border: 1px solid #fcfcfc66;
@@ -268,4 +281,173 @@ p {
   width: 17.5%;
   font-size: 1.2em;
   margin-top: 1%;
+}
+
+.back{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.dash{
+  margin-left: 0;
+  margin-right: 0;
+  justify-content: center;
+}
+
+.directoryContainer{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.directoryCol{
+  padding: 0 !important;
+}
+
+.banner{
+  padding: 2% 5%;
+  margin-bottom: 3%;
+  justify-content: center;
+}
+
+.logoContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  width: 80%;
+  right:0;
+}
+
+.greeting{
+  font-family: 'sansita', sans-serif;
+  font-size: 4em;
+  text-align: center;
+  padding-top: 4%;
+  padding-bottom: 2%;
+  color: #50a3a2;
+}
+
+.banner h5{
+  font-size: 2em;
+  font-family: 'sansita', sans-serif;
+  text-align: center;
+  padding-top: 4%;
+  color: #50a3a2;
+  
+}
+
+.directory{
+  padding-bottom: 10%;
+  max-width: max-content;
+}
+
+.dirButton{
+  width:110px;
+  background-color: #50a3a2 !important;
+  border: none !important;
+  right: 0;
+  box-shadow: 0 2px 5px #ccc !important;
+}
+
+.directoryName{
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+.insideButton{
+  margin: 1%;
+}
+
+.weatherCol{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.weather{
+  border: 3px dashed #50a3a2;
+  margin: 0;
+  height: 95%;
+  border-radius:15px;
+  box-shadow: 0 0 10px #0000004d;
+  background-color: #50a3a2;
+}
+
+/* .search{
+  margin-top: 2%;
+  padding-left:5%;
+} 
+
+/* .locationInput[type="text"]{
+  margin-top: 5%;
+  color: #f8f8f8;
+  border-radius: 10px;
+  border: 1px solid #eeeeee;
+  padding: 2.5% 5%;
+  background-color: #50a3a252;
+ 
+  /* width: 80%; */
+  /* text-align: center; */
+  /* height: 50px; */
+  /* top: 10px; */
+  /* border: none; */
+  /* background: transparent;
+  font-size: 1.5em;
+  font-weight: 200;
+  vertical-align: middle;
+  color: white;
+}  */
+
+/* .locationInput::placeholder{
+  color: #eeeeee;
+  font-family: 'montserrat', sans-serif;
+} */
+
+.cityName{
+  /* margin-top: 4%; */
+  font-family: 'sansita', sans-serif;
+  color:#eeeeee;
+  letter-spacing: 0.1em;
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+.middle{
+  margin-top: 5% !important;
+}
+
+.temp h1{
+  font-size: 3em;
+  color: #eeeeee;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.bottom{
+  margin-top: 5% !important;
+}
+
+.descriptionCategory{
+  text-align: center;
+  color: #eeeeee;
+}
+
+.weatherCategory{
+  text-align: center;
+  color: #eeeeee;
+  font-size: 1.2em;
+}
+
+.weatherDescription{
+  font-size: 1.3em;
+  color: #eeeeee;
+  margin-top: 7%;
+  text-transform: capitalize;
+
+}
+
+.preset{
+  text-align: center;
+  color: #eeeeee;
 }

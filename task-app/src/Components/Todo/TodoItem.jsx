@@ -44,7 +44,7 @@ function ToDoItem(props) {
     <Item className="item">
       {/* <input type="checkbox"   /> */}
       <input type="checkbox" onChange={changeItemStauts} checked={itemStatus} />
-      <p>{props.text}</p >
+      <p className="todoContent">{props.text}</p >
     </Item>
   );
 }
