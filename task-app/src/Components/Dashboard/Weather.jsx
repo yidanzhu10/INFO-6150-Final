@@ -67,33 +67,49 @@
 
 
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../index.css";
 import {Container, Row, Col} from 'react-bootstrap';
 
 function Weather() {
     // eslint-disable-next-line
     const [data, setData] = useState({}); 
-    const [location, setLocation] = useState("");
+    // const [location, setLocation] = useState("");
 
     // const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
     const url = `https://api.openweathermap.org/data/2.5/weather?q=boston&units=imperial&appid=6ca60f44f0359b08c91c9c5edf228a23`
 
-    const searchLocation = (event) => {
-        if (event.key === "Enter") {
-        axios.get(url).then((res) => {
-            setData(res.data);
-            console.log(res.data);
-        });
-        setLocation("");
-        }
-    };
+    // const searchLocation = (event) => {
+    //     if (event.key === "Enter") {
+    //     axios.get(url).then((res) => {
+    //         setData(res.data);
+    //         console.log(res.data);
+    //     });
+    //     setLocation("");
+    //     }
+    // };
+
+    function getWeather() {
+        fetch(url)
+          .then(function (res) {
+            console.log(res);
+            return res.json();
+          })
+          .then(function (myJson) {
+            console.log(myJson);
+            setData(myJson);
+          });
+    }
+
+    useEffect(() => {
+    getWeather();
+    }, []);
   
     return (
         <div className="weather">
         <Container className="search">
             <Row>
-                <Col>
+                {/* <Col>
                     <input
                         className="locationInput"
                         value={location}
@@ -102,13 +118,7 @@ function Weather() {
                         placeholder="Enter Location"
                         type="text"
                     />
-                    {/* <button
-                        onClick={searchLocation}
-
-                    >
-                        Get Weather
-                    </button> */}
-                </Col>
+                </Col> */}
                 <Col>
                     <div>
                         {data.name? <h1 className="cityName">{data.name}</h1>: <h1 className="cityName">Boston</h1>}
