@@ -103,13 +103,15 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "../../index.css";
 import swal from 'sweetalert';
-
+import styled from 'styled-components';
+// eslint-disable-next-line
 import axios from 'axios';
 
 
 function Login() {
-    const [email, setEmail] = useState("");
 
+    // eslint-disable-next-line
+    const [email, setEmail] = useState("");
     const [useremail, setUserEmail] = useState({
 
         email: "",
@@ -139,6 +141,7 @@ function Login() {
 
     function handleClick(event) {
         event.preventDefault();
+        // eslint-disable-next-line
         let users = fetch("http://localhost:3001/users/users")
             .then(res => {
                 if (res.ok) {
@@ -149,10 +152,10 @@ function Login() {
                 users.find((item) => {
                     console.log(item.email);
                     console.log(useremail.email);
-                    if (item.email == useremail.email) {
+                    if (item.email === useremail.email) {
                         flag = false;
                         console.log(flag);
-                        if (item.password == useremail.password) {
+                        if (item.password === useremail.password) {
                             sessionStorage.setItem("email", useremail.email);
                             console.log("login email is " + sessionStorage.getItem("email"));
                             swal({
@@ -191,7 +194,7 @@ function Login() {
     return (
         <div className="signUpContainer">
             <h1>Hello</h1>
-            <p>{useremail.email}</p >
+            <Email>{useremail.email}</Email>
             <form className="signupForm">
                 <input
                     className="signupInput"
@@ -206,5 +209,13 @@ function Login() {
         </div>
     );
 }
+
+const Email = styled.p`
+    font-family: 'Source Sans Pro';
+    color: white;
+    font-weight: 200;
+    padding-top: 2%;
+    padding-bottom: 2%;
+`;
 
 export default Login;

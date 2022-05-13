@@ -88,24 +88,26 @@ function Weather() {
         setLocation("");
         }
     };
-
-    // const icon = {data.weather[0].icon};
-    // const iconUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-    // const iconAlt = "http://openweathermap.org/img/wn/02d@2x.png";
   
     return (
         <div className="weather">
         <Container className="search">
             <Row>
-                <Col style={{marginTop:"1.5%"}}>
+                <Col>
                     <input
                         className="locationInput"
                         value={location}
-                        type="text"
                         onChange={(event) => searchLocation(event.target.value)}
                         onKeyPress={searchLocation}
                         placeholder="Enter Location"
+                        type="text"
                     />
+                    {/* <button
+                        onClick={searchLocation}
+
+                    >
+                        Get Weather
+                    </button> */}
                 </Col>
                 <Col>
                     <div>

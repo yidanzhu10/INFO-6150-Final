@@ -309,6 +309,12 @@ input:checked + p {
   justify-content: center;
 }
 
+.logoContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo{
   width: 80%;
   right:0;
@@ -361,17 +367,35 @@ input:checked + p {
 .weather{
   border: 3px dashed #50a3a2;
   margin: 0;
+  height: 95%;
   border-radius:15px;
+  box-shadow: 0 0 10px #0000004d;
   background-color: #50a3a2;
 }
 
-.locationInput{
+.search{
+  margin-top: 2%;
+  /* padding-left:5%; */
+}
+
+.locationInput[type="text"]{
   margin-top: 5%;
   color: #f8f8f8;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #eeeeee;
-  padding: 1% 5%;
+  padding: 2.5% 5%;
   background-color: #50a3a252;
+ 
+  /* width: 80%; */
+  /* text-align: center; */
+  /* height: 50px; */
+  /* top: 10px; */
+  /* border: none; */
+  background: transparent;
+  font-size: 1.5em;
+  font-weight: 200;
+  vertical-align: middle;
+  color: white;
 }
 
 .locationInput::placeholder{
@@ -380,9 +404,12 @@ input:checked + p {
 }
 
 .cityName{
-  margin-top: 4%;
-  font-family: 'montserrat', sans-serif;
+  /* margin-top: 4%; */
+  font-family: 'sansita', sans-serif;
   color:#eeeeee;
+  letter-spacing: 0.1em;
+  font-size: 4em;
+  margin-bottom: 0;
 }
 
 .middle{
@@ -415,7 +442,6 @@ input:checked + p {
 .weatherDescription{
   font-size: 1.3em;
   color: #eeeeee;
-  /* height: 100%; */
   margin-top: 7%;
 }
 
