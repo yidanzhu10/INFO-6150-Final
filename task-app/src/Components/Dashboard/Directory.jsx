@@ -20,11 +20,11 @@ function Directory(){
 
     function toTodo(event){        
         event.preventDefault();
-        navigate("/todopage");
+        
         if(sessionStorage.getItem("email") === null){
             navigate("/login");
         }else{
-            navigate("/notepage");
+            navigate("/todopage");
         }
     }
 

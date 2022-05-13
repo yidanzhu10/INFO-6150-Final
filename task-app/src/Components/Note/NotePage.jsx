@@ -14,10 +14,12 @@ import styled from "styled-components";
 import axios from "axios";
 
 import swal from "sweetalert";
+import { wait } from "@testing-library/user-event/dist/utils";
 
 function NotePage() {
   const [notes, setNotes] = useState([]);
   const [currentEmail, setCurrentEmail] = useState("");
+  // const [deleteTrigger, setDeleteTrigger] = useState("");
   const [deleteTrigger, setDeleteTrigger] = useState({
     status: "aaa"
   });
@@ -28,11 +30,12 @@ function NotePage() {
     });
   }
 
+
   useEffect(() => {
     console.log(sessionStorage.getItem("email"));
     setCurrentEmail(sessionStorage.getItem("email"));
     console.log(currentEmail + " currentEmail");
-    retrieveNote();
+    // retrieveNote();
     console.log(currentEmail + " after retrieve");
     console.log("first loaded");
     console.log(notes);
@@ -47,8 +50,10 @@ function NotePage() {
 
   useEffect(() => {
 
-    console.log(currentEmail + " currentEmail in node");
+    console.log(deleteTrigger + " deleteTrigger in node");
+    
     retrieveNote();
+    console.log('delete use effect completed');
 
   }, [deleteTrigger])
 
@@ -104,7 +109,7 @@ function NotePage() {
       });
   }
 
-  function deleteNote(number) {
+  async function deleteNote(number) {
     
     let newlist = notes;
     let removedlist = newlist.splice(number, 1);
@@ -124,7 +129,12 @@ function NotePage() {
     axios.post('http://localhost:3001/users/update', newNotes);
     // retrieveNote();
     setNotes(newlist);
+    // setDeleteTrigger(deleteTrigger + '-');
+    console.log('delete completed');
+    console.log(notes);
+
     setDeleteTrigger({status:'aaa'});
+    window.location.reload();
     // setCurrentEmail(currentEmail);
 
   }
