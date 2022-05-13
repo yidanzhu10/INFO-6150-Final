@@ -42,7 +42,7 @@ function Weather() {
                     {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : <h1>75°F</h1>}
                 </Col>
                 <Col className="icon">
-                    {data.weather ? <p className="weatherDescription">{data.weather[0].description}</p> : <p className="weatherDescription">Weather Description</p>}
+                    {data.weather ? <p className="weatherDescription">{data.weather[0].description}</p > : <p className="weatherDescription">Weather Description</p >}
                 </Col>
             </Row>
         </Container>
@@ -50,16 +50,16 @@ function Weather() {
         <Container>
             <Row className="bottom">
                 <Col className="feels">
-                    {data.main ? <p className='descriptionCategory'>{data.main.feels_like.toFixed()}°F</p> : <p className="preset">Feels Good</p>}
-                    <p className='weatherCategory'>Feels Like</p>
+                    {data.main ? <p className='descriptionCategory'>{data.main.feels_like.toFixed()}°F</p > : <p className="preset">Feels Good</p >}
+                    <p className='weatherCategory'>Feels Like</p >
                 </Col>
                 <Col className="humidity">
-                    {data.main ? <p className='descriptionCategory'>{data.main.humidity}%</p> : <p className="preset">Just Right</p>}
-                    <p className='weatherCategory'>Humidity</p>
+                    {data.main ? <p className='descriptionCategory'>{data.main.humidity}%</p > : <p className="preset">Just Right</p >}
+                    <p className='weatherCategory'>Humidity</p >
                 </Col>
                 <Col className="wind">
-                    {data.wind ? <p className='descriptionCategory'>{data.wind.speed.toFixed()} MPH</p> : <p className="preset">Breeze</p>}
-                    <p className='weatherCategory'>Wind Speed</p>
+                    {data.wind ? <p className='descriptionCategory'>{data.wind.speed.toFixed()} MPH</p > : <p className="preset">Breeze</p >}
+                    <p className='weatherCategory'>Wind Speed</p >
                 </Col>
             </Row>
         </Container>

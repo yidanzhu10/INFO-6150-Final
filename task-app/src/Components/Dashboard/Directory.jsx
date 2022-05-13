@@ -10,12 +10,22 @@ function Directory(){
 
     function toNote(event){
         event.preventDefault();
-        navigate("/notepage");
+        if(sessionStorage.getItem("email") === null){
+            navigate("/login");
+        }else{
+            navigate("/notepage");
+        }
+        
     }
 
     function toTodo(event){        
         event.preventDefault();
         navigate("/todopage");
+        if(sessionStorage.getItem("email") === null){
+            navigate("/login");
+        }else{
+            navigate("/notepage");
+        }
     }
 
     return(
@@ -24,19 +34,19 @@ function Directory(){
                 <Col className="directory">
                     <Button href="#" className="dirButton">
                         <FontAwesomeIcon icon={faHome} size='3x' className="insideButton" /> 
-                        <p className="directoryName">Dashboard</p>
+                        <p className="directoryName">Dashboard</p >
                     </Button>
                 </Col>
                 <Col className="directory">
                     <Button onClick={toNote} className="dirButton">
                         <FontAwesomeIcon icon={faFileEdit} size='3x' className="insideButton"/>
-                        <p className="directoryName">Note</p>
+                        <p className="directoryName">Note</p >
                     </Button>
                 </Col>
                 <Col className="directory">
                     <Button onClick={toTodo} className="dirButton">
                         <FontAwesomeIcon icon={faTasks} size='3x' className="insideButton"/>
-                        <p className="directoryName">To-Do</p>
+                        <p className="directoryName">To-Do</p >
                     </Button>
                 </Col>          
             

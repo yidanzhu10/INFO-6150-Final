@@ -1,20 +1,24 @@
-//from Yidan
-import React from "react";
+import React from 'react';
+import "../footer.css";
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-function BackButton() {
+function BackButton(){
+
     var navigate = useNavigate();
 
     function toDash(event){
+        
         event.preventDefault();
         navigate("/dashboard");
+
     }
-  return (
-    <div className="back">
-      <Button onClick={toDash} className="backButton">Go Back To DashBoard</Button>
-    </div>
-  );
+
+    return (
+        <div className='back'>
+            <Button onClick={toDash} className="backButton">Go Back To DashBoard</Button>
+        </div>
+    );
 }
 
 const Button = styled.button`
@@ -28,5 +32,20 @@ const Button = styled.button`
   margin-left: 5%;
 `;
 
-
 export default BackButton;
+
+//from Yidan
+// import React from "react";
+// import styled from "styled-components";
+
+// function BackButton() {
+//   return (
+//     <div className="back">
+//       <Button className="backButton">Go Back To DashBoard</Button>
+//     </div>
+//   );
+// }
+
+
+
+// export default BackButton;

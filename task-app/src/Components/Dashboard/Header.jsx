@@ -29,7 +29,7 @@ function Header(){
                 <Container fluid="true">
                     <Row  className="banner">
                         <Col md='3' className="logoContainer">
-                            <img className="logo" src={logo} alt="Logo"></img>
+                            < img className="logo" src={logo} alt="Logo"></img>
                         </Col>
                         <Col className="greetingRow" md='6'>
                             <h3 className="greeting">Good {timeOfDay}, Husky!</h3>
