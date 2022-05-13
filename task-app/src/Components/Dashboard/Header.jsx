@@ -28,7 +28,7 @@ function Header(){
             <section>
                 <Container fluid="true">
                     <Row  className="banner">
-                        <Col md='3'>
+                        <Col md='3' className="logoContainer">
                             <img className="logo" src={logo} alt="Logo"></img>
                         </Col>
                         <Col className="greetingRow" md='6'>

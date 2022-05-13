@@ -2,8 +2,6 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./Header";
 import Directory from "./Directory";
-// import Feed from "./Feed";
-// import Copyright from '../Footer';
 import styled from "styled-components";
 import Weather from "./Weather";
 import {Container, Row, Col} from 'react-bootstrap';
@@ -13,11 +11,11 @@ function Dashboard(){
         <div>
             <Header />
             <Container fluid={true} className="directoryContainer">
-                <Row md='3' className="dash">
-                    <Col className="directoryCol">
+                <Row className="dash">
+                    <Col  lg='2' className="directoryCol">
                         <Directory />
                     </Col>
-                    <Col>
+                    <Col className="weatherCol" lg='6'>
                         <Weather />
                     </Col>
                 </Row>

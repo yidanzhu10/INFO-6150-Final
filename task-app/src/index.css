@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'montserrat', sans-serif;
 }
 html {
   height: 100vh;
@@ -287,28 +288,10 @@ input:checked + p {
   padding-bottom: 5%;
 }
 
-.weather{
-  border: 1px solid grey;
-  margin-top: 3%;
-}
-
-.weather .search{
-  /* text-align: center; */
-  justify-content: left;
-
-}
-
-.locationInput{
-  color: rgb(39, 6, 6);
-}
-
-.locationInput::placeholder{
-  color:grey;
-}
-
 .dash{
   margin-left: 0;
   margin-right: 0;
+  justify-content: center;
 }
 
 .directoryContainer{
@@ -329,12 +312,6 @@ input:checked + p {
 .logo{
   width: 80%;
   right:0;
-  /* justify-content: center; */
-}
-
-.greetingRow{
-  /* box-shadow: 0 2px 5px #ccc; */
-
 }
 
 .greeting{
@@ -343,7 +320,6 @@ input:checked + p {
   text-align: center;
   padding-top: 4%;
   padding-bottom: 2%;
-  /* color: #fff; */
   color: #50a3a2;
 }
 
@@ -357,14 +333,15 @@ input:checked + p {
 }
 
 .directory{
-  margin-left: 15rem;
-  padding-bottom: 4%;
+  padding-bottom: 10%;
+  max-width: max-content;
 }
 
 .dirButton{
-  width:60%;
+  width:110px;
   background-color: #50a3a2 !important;
   border: none !important;
+  right: 0;
   box-shadow: 0 2px 5px #ccc !important;
 }
 
@@ -376,3 +353,73 @@ input:checked + p {
   margin: 1%;
 }
 
+.weatherCol{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.weather{
+  border: 3px dashed #50a3a2;
+  margin: 0;
+  border-radius:15px;
+  background-color: #50a3a2;
+}
+
+.locationInput{
+  margin-top: 5%;
+  color: #f8f8f8;
+  border-radius: 5px;
+  border: 1px solid #eeeeee;
+  padding: 1% 5%;
+  background-color: #50a3a252;
+}
+
+.locationInput::placeholder{
+  color: #eeeeee;
+  font-family: 'montserrat', sans-serif;
+}
+
+.cityName{
+  margin-top: 4%;
+  font-family: 'montserrat', sans-serif;
+  color:#eeeeee;
+}
+
+.middle{
+  margin-top: 5% !important;
+}
+
+.temp h1{
+  font-size: 3em;
+  color: #eeeeee;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.bottom{
+  margin-top: 5% !important;
+}
+
+.descriptionCategory{
+  text-align: center;
+  color: #eeeeee;
+}
+
+.weatherCategory{
+  text-align: center;
+  color: #eeeeee;
+  font-size: 1.2em;
+}
+
+.weatherDescription{
+  font-size: 1.3em;
+  color: #eeeeee;
+  /* height: 100%; */
+  margin-top: 7%;
+}
+
+.preset{
+  text-align: center;
+  color: #eeeeee;
+}

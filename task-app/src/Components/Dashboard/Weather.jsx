@@ -76,8 +76,8 @@ function Weather() {
     const [data, setData] = useState({}); 
     const [location, setLocation] = useState("");
 
+    // const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
     const url = `https://api.openweathermap.org/data/2.5/weather?q=boston&units=imperial&appid=6ca60f44f0359b08c91c9c5edf228a23`
-    // const url = `https://api.openweathermap.org/data/2.5/weather?q=boston&units=imperial&appid=6ca60f44f0359b08c91c9c5edf228a23`;
 
     const searchLocation = (event) => {
         if (event.key === "Enter") {
@@ -89,11 +89,15 @@ function Weather() {
         }
     };
 
+    // const icon = {data.weather[0].icon};
+    // const iconUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+    // const iconAlt = "http://openweathermap.org/img/wn/02d@2x.png";
+  
     return (
         <div className="weather">
         <Container className="search">
             <Row>
-                <Col>
+                <Col style={{marginTop:"1.5%"}}>
                     <input
                         className="locationInput"
                         value={location}
@@ -104,39 +108,40 @@ function Weather() {
                     />
                 </Col>
                 <Col>
-                    <div className="cityName">
-                        {data.name? <p>{data.name}</p>: <h2>Boston</h2>}
+                    <div>
+                        {data.name? <h1 className="cityName">{data.name}</h1>: <h1 className="cityName">Boston</h1>}
                     </div>
                 </Col>
             </Row>
         </Container>
 
         <Container>
-            <Row>
+            <Row className="middle">
                 <Col className="temp">
                     {/* <h1>65 °F</h1> */}
-                    {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : <p>75°F</p>}
+                    {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : <h1>75°F</h1>}
                 </Col>
                 <Col className="icon">
                     {/* <p>clouds</p> */}
-                    {data.weather ? <p>{data.weather[0].icon}</p> : <p>icon</p>}
+                    {data.weather ? <p className="weatherDescription">{data.weather[0].description}</p> : <p className="weatherDescription">Weather Description</p>}
+                    {/* {data.weather ? <img src={iconUrl}></img>: <img src={iconAlt}></img>} */}
                 </Col>
             </Row>
         </Container>
 
         <Container>
-            <Row>
+            <Row className="bottom">
                 <Col className="feels">
-                    {data.main ? <p className='descriptionCategory'>{data.main.feels_like.toFixed()}°F</p> : <p>Feels Good</p>}
-                    <p>Feels Like</p>
+                    {data.main ? <p className='descriptionCategory'>{data.main.feels_like.toFixed()}°F</p> : <p className="preset">Feels Good</p>}
+                    <p className='weatherCategory'>Feels Like</p>
                 </Col>
                 <Col className="humidity">
-                    {data.main ? <p className='descriptionCategory'>{data.main.humidity}%</p> : <p>Just Right</p>}
-                    <p>Humidity</p>
+                    {data.main ? <p className='descriptionCategory'>{data.main.humidity}%</p> : <p className="preset">Just Right</p>}
+                    <p className='weatherCategory'>Humidity</p>
                 </Col>
                 <Col className="wind">
-                    {data.wind ? <p className='descriptionCategory'>{data.wind.speed.toFixed()} MPH</p> : <p>Breeze</p>}
-                    <p>Wind Speed</p>
+                    {data.wind ? <p className='descriptionCategory'>{data.wind.speed.toFixed()} MPH</p> : <p className="preset">Breeze</p>}
+                    <p className='weatherCategory'>Wind Speed</p>
                 </Col>
             </Row>
         </Container>
