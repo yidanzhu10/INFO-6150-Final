@@ -127,49 +127,19 @@ function Weather() {
         <Container>
             <Row>
                 <Col className="feels">
-                    {data.main ? <p className='descriptionCategory'>{data.main.feels_like.toFixed()}°F</p> : null}
+                    {data.main ? <p className='descriptionCategory'>{data.main.feels_like.toFixed()}°F</p> : <p>Feels Good</p>}
                     <p>Feels Like</p>
                 </Col>
                 <Col className="humidity">
-                    {data.main ? <p className='descriptionCategory'>{data.main.humidity}%</p> : null}
+                    {data.main ? <p className='descriptionCategory'>{data.main.humidity}%</p> : <p>Just Right</p>}
                     <p>Humidity</p>
                 </Col>
                 <Col className="wind">
-                    {data.wind ? <p className='descriptionCategory'>{data.wind.speed.toFixed()} MPH</p> : null}
+                    {data.wind ? <p className='descriptionCategory'>{data.wind.speed.toFixed()} MPH</p> : <p>Breeze</p>}
                     <p>Wind Speed</p>
                 </Col>
             </Row>
         </Container>
-        <div className="container">
-            <div className="top">
-            {/* <div className="location">
-                <p>Boston</p>
-            </div> */}
-            <div className="temp">
-                
-            </div>
-            <div className="description">
-                
-            </div>
-            </div>
-            <div className="bottom">
-            <div className="feels">
-                {/* <p className="bold">70 °F</p> */}
-                {/* {data.main ? <p className='descriptionCategory'>{data.main.feels_like.toFixed()}°F</p> : null}
-                <p>Feels Like</p> */}
-            </div>
-            <div className="humidity">
-                {/* <p className="bold">20%</p> */}
-                {/* {data.main ? <p className='descriptionCategory'>{data.main.humidity}%</p> : null}
-                <p>Humidity</p> */}
-            </div>
-            <div className="wind">
-                {/* <p className="bold">12 MPH</p> */}
-                {/* {data.wind ? <p className='descriptionCategory'>{data.wind.speed.toFixed()} MPH</p> : null}
-                <p>Wind Speed</p> */}
-            </div>
-            </div>
-        </div>
         </div>
     );
 }

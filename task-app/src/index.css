@@ -6,7 +6,7 @@
 html {
   height: 100vh;
   margin: 0;
-  background-color: #50a3a2b3;
+  background-color: #50a3a2;
 }
 
 .notePage {
@@ -122,7 +122,7 @@ header h1 {
   outline: none;
 }
 
-html {
+.todoContainer{
   background-color: #50a3a2;
 }
 
@@ -226,10 +226,15 @@ input:checked + p {
   color: #00204a;
 }
 
+/* .hello{
+  background-color: #50a3a2b3;
+} */
+
 .signUpContainer {
   margin: 5% auto;
   padding: 2% 0;
   text-align: center;
+  background-color: #50a3a2;
 }
 
 .signUpContainer h1 {
@@ -284,6 +289,7 @@ input:checked + p {
 
 .weather{
   border: 1px solid grey;
+  margin-top: 3%;
 }
 
 .weather .search{
@@ -300,6 +306,73 @@ input:checked + p {
   color:grey;
 }
 
-.cityName{
+.dash{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.directoryContainer{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.directoryCol{
+  padding: 0 !important;
+}
+
+.banner{
+  padding: 2% 5%;
+  margin-bottom: 3%;
+  justify-content: center;
+}
+
+.logo{
+  width: 80%;
+  right:0;
+  /* justify-content: center; */
+}
+
+.greetingRow{
+  /* box-shadow: 0 2px 5px #ccc; */
 
 }
+
+.greeting{
+  font-family: 'sansita', sans-serif;
+  font-size: 4em;
+  text-align: center;
+  padding-top: 4%;
+  padding-bottom: 2%;
+  /* color: #fff; */
+  color: #50a3a2;
+}
+
+.banner h5{
+  font-size: 2em;
+  font-family: 'sansita', sans-serif;
+  text-align: center;
+  padding-top: 4%;
+  color: #50a3a2;
+  
+}
+
+.directory{
+  margin-left: 15rem;
+  padding-bottom: 4%;
+}
+
+.dirButton{
+  width:60%;
+  background-color: #50a3a2 !important;
+  border: none !important;
+  box-shadow: 0 2px 5px #ccc !important;
+}
+
+.directoryName{
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+.insideButton{
+  margin: 1%;
+}
+

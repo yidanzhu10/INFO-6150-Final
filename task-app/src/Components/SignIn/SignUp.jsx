@@ -221,7 +221,7 @@ function Signup() {
 
   return (
     <div className="signUpContainer">
-      <h1>
+      <h1 className="hello">
         Hello {username.fName} {username.lName}
       </h1>
       <UserName>{username.email}</UserName>
