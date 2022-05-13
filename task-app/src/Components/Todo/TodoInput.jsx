@@ -35,11 +35,23 @@ import React, { useState } from "react";
 import "../../index.css";
 
 function TodoInput(props) {
-  const [input, setInput] = useState("");
+  const [inputText, setInputText] = useState("");
 
   function addItem(event) {
     const newValue = event.target.value;
-    setInput(newValue);
+    setInputText(newValue);
+    // props.onAdd(input);
+    // event.preventDefault();
+  }
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setInputText((preValue) => {
+      return {
+        ...preValue,
+        [name]: value
+      };
+    });
   }
 
   return (
@@ -49,14 +61,14 @@ function TodoInput(props) {
           className="todoInput"
           onChange={addItem}
           type="text"
-          value={input}
+          value={inputText}
           placeholder="New Item"
         ></input>
         <button
           className="add"
           onClick={() => {
-            props.onAdd(input);
-            setInput("");
+            props.onAdd(inputText);
+            setInputText("");
           }}
         >
           +
