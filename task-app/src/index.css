@@ -373,12 +373,12 @@ input:checked + p {
   background-color: #50a3a2;
 }
 
-.search{
+/* .search{
   margin-top: 2%;
-  /* padding-left:5%; */
-}
+  padding-left:5%;
+} 
 
-.locationInput[type="text"]{
+/* .locationInput[type="text"]{
   margin-top: 5%;
   color: #f8f8f8;
   border-radius: 10px;
@@ -391,17 +391,17 @@ input:checked + p {
   /* height: 50px; */
   /* top: 10px; */
   /* border: none; */
-  background: transparent;
+  /* background: transparent;
   font-size: 1.5em;
   font-weight: 200;
   vertical-align: middle;
   color: white;
-}
+}  */
 
-.locationInput::placeholder{
+/* .locationInput::placeholder{
   color: #eeeeee;
   font-family: 'montserrat', sans-serif;
-}
+} */
 
 .cityName{
   /* margin-top: 4%; */
@@ -443,6 +443,8 @@ input:checked + p {
   font-size: 1.3em;
   color: #eeeeee;
   margin-top: 7%;
+  text-transform: capitalize;
+
 }
 
 .preset{
