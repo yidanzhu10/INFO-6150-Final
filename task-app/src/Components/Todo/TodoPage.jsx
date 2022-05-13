@@ -160,7 +160,7 @@ function TodoPage() {
   }
 
   return (
-    <div className="container">
+    <div className="todoContainer">
       <div className="heading">
         <h1 className="date">
           {new Date().toLocaleDateString("en-US", options)}

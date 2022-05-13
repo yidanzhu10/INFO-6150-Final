@@ -1,5 +1,6 @@
 import React from 'react';
 import "../footer.css";
+import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
 function BackButton(){
@@ -15,12 +16,21 @@ function BackButton(){
 
     return (
         <div className='back'>
-            <button onClick={toDash} className='backButton'>
-                Go Back To DashBoard
-            </button>
+            <Button onClick={toDash} className="backButton">Go Back To DashBoard</Button>
         </div>
     );
 }
+
+const Button = styled.button`
+  color: #50a3a2;
+  padding: 0.5%;
+  background-color: #eeeeee;
+  font-family: "montserrat", sans-serif;
+  font-weight: 500;
+  border: 0.5px solid #50a3a2;
+  border-radius: 10px;
+  margin-left: 5%;
+`;
 
 export default BackButton;
 
@@ -36,15 +46,6 @@ export default BackButton;
 //   );
 // }
 
-// const Button = styled.button`
-//   color: #50a3a2;
-//   padding: 0.5%;
-//   background-color: #eeeeee;
-//   font-family: "montserrat", sans-serif;
-//   font-weight: 500;
-//   border: 0.5px solid #50a3a2;
-//   border-radius: 10px;
-//   margin-left: 5%;
-// `;
+
 
 // export default BackButton;

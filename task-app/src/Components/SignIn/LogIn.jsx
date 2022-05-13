@@ -103,7 +103,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "../../index.css";
 import swal from 'sweetalert';
-
+import styled from "styled-components";
 import axios from 'axios';
 
 
@@ -194,7 +194,7 @@ function Login() {
     return (
         <div className="signUpContainer">
             <h1>Hello</h1>
-            <p>{useremail.email}</p >
+            <Email>{useremail.email}</Email >
             <form className="signupForm">
                 <input
                     className="signupInput"
@@ -210,5 +210,13 @@ function Login() {
         </div>
     );
 }
+
+const Email = styled.p`
+    font-family: 'Source Sans Pro';
+    color: white;
+    font-weight: 200;
+    padding-top: 2%;
+    padding-bottom: 2%;
+`;
 
 export default Login;
