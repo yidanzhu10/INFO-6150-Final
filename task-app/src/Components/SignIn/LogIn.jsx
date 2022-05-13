@@ -187,6 +187,9 @@ function Login() {
 
             });
     }
+    function toSignup() {
+        navigate("/signup");
+    }
 
     return (
         <div className="signUpContainer">
@@ -201,7 +204,8 @@ function Login() {
                     placeholder="Email"
                 />
                 <input onChange={typeChange} className="signupInput" name="password" placeholder="Password" value={useremail.password}/>
-                <button className="signUpButton" onClick={handleClick}>Log In</button>
+                <button className="signUpButton" onClick={handleClick}>Log In</button><br />
+                <button className="signUpButton" onClick={toSignup}>Sign up</button>
             </form>
         </div>
     );

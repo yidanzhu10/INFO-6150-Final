@@ -8,13 +8,15 @@ router.route("/create").post((req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const notelist = req.body.notelist;
+    const todolist = req.body.todolist;
     console.log(">>> ccleae: ", req.body);
     const newUser = new user({
         firstname,
         lastname,
         email,
         password,
-        notelist
+        notelist,
+        todolist
     
     });
     console.log(">>> e: ", newUser);
@@ -27,6 +29,21 @@ router.route("/update").post((req, res)  =>{
     user.update({email: req.body.email}, {
         $set: {
             notelist: req.body.notelist
+        }
+    }, function (err, samples) {
+        if (err)
+            res.send(err);
+        res.status(200);
+        res.json(samples);
+    })
+});
+
+router.route("/updatetodo").post((req, res)  =>{
+
+    console.log(">>> u: ", req.body);
+    user.update({email: req.body.email}, {
+        $set: {
+            todolist: req.body.todolist
         }
     }, function (err, samples) {
         if (err)
