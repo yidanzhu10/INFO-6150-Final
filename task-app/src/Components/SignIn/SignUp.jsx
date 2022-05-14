@@ -143,8 +143,8 @@ function Signup() {
           value={username.email}
           placeholder="Email"
         />
-        <input className="signupInput" placeholder="Password" name="password" onChange={typeChange} value={username.password}/>
-        <input className="signupInput" placeholder="Conform Password" name="repeatPassword" onChange={typeChange} value={username.repeatPassword} />
+        <input className="signupInput" placeholder="Password" name="password"  type='password' onChange={typeChange} value={username.password}/>
+        <input className="signupInput" placeholder="Conform Password" type='password' name="repeatPassword" onChange={typeChange} value={username.repeatPassword} />
         <button className="signUpButton" onClick={handleClick}>Sign Up</button>
       </form>
     </div>

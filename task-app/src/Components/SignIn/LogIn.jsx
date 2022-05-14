@@ -194,7 +194,7 @@ function Login() {
     return (
         <div className="signUpContainer">
             <h1>Hello</h1>
-            <Email>{useremail.email}</Email >
+            <Email>{useremail.email}</Email>
             <form className="signupForm">
                 <input
                     className="signupInput"
@@ -203,7 +203,7 @@ function Login() {
                     value={useremail.email}
                     placeholder="Email"
                 />
-                <input onChange={typeChange} className="signupInput" name="password" placeholder="Password" value={useremail.password}/>
+                <input onChange={typeChange} className="signupInput" type='password' name="password" placeholder="Password" value={useremail.password}/>
                 <button className="signUpButton" onClick={handleClick}>Log In</button><br />
                 <button className="signUpButton" onClick={toSignup}>Sign up</button>
             </form>
