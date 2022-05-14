@@ -1,5 +1,3 @@
-
-
 // from yidan
 import React, { useState } from "react";
 import { useEffect } from "react";
@@ -23,12 +21,6 @@ function TodoPage() {
   });
 
   function addItem(newinput) {
-    // setItems((preValue) => {
-    //   return [...preValue, input];
-    // });
-    // setInput("");
-
-
 
     console.log(todo.content + " to do is changed");
 
@@ -38,11 +30,6 @@ function TodoPage() {
     }
     //retrieveTodo();
     let newlist = [...items, newtodo];
-    // setNotes((preNotes) => {
-    //     console.log("setnotes");
-    //     console.log([...preNotes, newNote]);
-    //     return ;
-    // });
 
     console.log("new to do item is " + todo.content);
     console.log(items);
@@ -84,14 +71,11 @@ function TodoPage() {
   }, [currentEmail])
 
   useEffect(() => {
-
     
     console.log(todochange + " todochange ");
     retrieveTodo();
 
   }, [todochange])
-
-  
 
   const options = {
     weekday: "long",
@@ -109,7 +93,6 @@ function TodoPage() {
         }
       }).then(users => {
 
-
         console.log("Current user is " + currentEmail);
         users.find((item) => {
           console.log(item.email);
@@ -121,8 +104,6 @@ function TodoPage() {
             return;
           }
         });
-
-
 
       });
   }

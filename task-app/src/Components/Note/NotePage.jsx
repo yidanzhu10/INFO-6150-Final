@@ -1,7 +1,3 @@
-
-
-
-
 //from YIdan
 import React, { useEffect } from "react";
 import { useState } from "react";
@@ -13,8 +9,8 @@ import BackButton from "../BackButton";
 import styled from "styled-components";
 import axios from "axios";
 
-import swal from "sweetalert";
-import { wait } from "@testing-library/user-event/dist/utils";
+// import swal from "sweetalert";
+// import { wait } from "@testing-library/user-event/dist/utils";
 
 function NotePage() {
   const [notes, setNotes] = useState([]);
@@ -59,15 +55,7 @@ function NotePage() {
 
 
   function addToNote(newNote) {
-
-
     let newlist = [...notes, newNote];
-    // setNotes((preNotes) => {
-    //     console.log("setnotes");
-    //     console.log([...preNotes, newNote]);
-    //     return ;
-    // });
-
     console.log("new note is " + newNote.title);
     console.log(notes);
     const newNotes = {
@@ -79,7 +67,6 @@ function NotePage() {
     // retrieveNote();
     setNotes(newlist);
     return;
-
   }
 
   function retrieveNote() {
@@ -90,7 +77,6 @@ function NotePage() {
           return res.json()
         }
       }).then(users => {
-
 
         console.log("Current user is " + currentEmail);
         users.find((item) => {
@@ -104,8 +90,6 @@ function NotePage() {
           }
         });
 
-
-
       });
   }
 
@@ -113,13 +97,6 @@ function NotePage() {
     
     let newlist = notes;
     let removedlist = newlist.splice(number, 1);
-    // setNotes((preNotes) => {
-    //     console.log("setnotes");
-    //     console.log([...preNotes, newNote]);
-    //     return ;
-    // });
-
-    // console.log("new note is " + newNote.title);
     console.log(notes);
     const newNotes = {
 
@@ -139,8 +116,6 @@ function NotePage() {
 
   }
 
-
-
   return (
     <div className="notePage">
       <NoteHeader />
@@ -149,7 +124,6 @@ function NotePage() {
         console.log("current index is " + index);
         return <Note number={index} title={item.title} deleteNote={deleteNote} content={item.content} />;
       })}
-      {/* <Note key={1} title="Note Title" content="Note content" /> */}
       <br />
       <Footer1>
         <BackButton />

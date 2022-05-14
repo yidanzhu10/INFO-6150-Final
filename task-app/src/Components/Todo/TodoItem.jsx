@@ -1,21 +1,5 @@
-// import React from 'react';
-// import '../ToDo.css';
-
-// function ToDoItem(props){
-//     return (
-//         <div className='item'>
-//             <input type="checkbox" />
-//             <p>{props.text}</p>
-//         </div>
-//     );
-// }
-
-// export default ToDoItem;
-
-
 //from Yidan
 import React, { useState, useEffect } from "react";
-// import "./todo.css";
 import "../../index.css";
 import styled from "styled-components";
 

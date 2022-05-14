@@ -1,13 +1,8 @@
-
-
 //from Yidan
 import React from "react";
-// import "./note.css";
 import "../../index.css";
 
 function Note(props) {
-
-
   const deleteClick = (event) => {
     event.preventDefault();
     const { deleteNote, number } = props;

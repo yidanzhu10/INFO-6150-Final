@@ -1,6 +1,3 @@
-
-
-
 //from Yidan
 import React, { useState } from "react";
 import "../../index.css";
@@ -11,9 +8,6 @@ import styled from "styled-components";
 
 function Signup() {
   const [username, setUsername] = useState({
-    // fName: "",
-    // lName: "",
-    // email: ""
     fName: "",
     lName: "",
     email: "",
@@ -36,7 +30,6 @@ function Signup() {
   function handleClick(event) {
 
     var valEmail = /([\w.]+)@([\w.]+)\.(\w+)/;
-    // var valPwd = /^.*(?=.{8,}).*$/;
     var valPwd = /^.*(?=.{8,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*?\(\)]).*$/;
 
     event.preventDefault();
@@ -102,18 +95,12 @@ function Signup() {
             text: "Welcome to Husky Note!",
             icon: "success",
           });
-          
-          // history.push("/component/main")
           navigate("/login");
           return;
 
         }
       });
   }
-
-
-
-
 
   return (
     <div className="signUpContainer">
